@@ -1,7 +1,6 @@
-import React from 'react'
 import { HelpCircle, BookOpen, MessageCircle, FileQuestion } from 'lucide-react'
 
-const HelpView: React.FC = () => {
+export default function HelpView() {
   return (
     <div className="animate-fadeIn">
       <h1 className="text-2xl font-bold mb-6 flex items-center">
@@ -94,5 +93,3 @@ const HelpView: React.FC = () => {
     </div>
   )
 }
-
-export default HelpView

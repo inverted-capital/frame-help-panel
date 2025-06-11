@@ -1,18 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import useAccountData from './hooks/useAccountData.ts'
 import useAccountSaver from './hooks/useAccountSaver.ts'
 import type { AccountData } from './types/account.ts'
+import HelpView from './help/HelpView.tsx'
 
 const defaultProfile: AccountData = { name: '' }
 
 export default function App() {
-  const { data, loading, error } = useAccountData()
+  const { loading, error } = useAccountData()
   const save = useAccountSaver()
-  const [name, setName] = useState('')
-
-  useEffect(() => {
-    if (data) setName(data.name)
-  }, [data])
 
   useEffect(() => {
     if (error === 'profile.json not found') {
@@ -20,20 +16,7 @@ export default function App() {
     }
   }, [error, save])
 
-  const handleSave = () => {
-    save({ name })
-  }
-
   if (loading) return <p>Loading...</p>
 
-  return (
-    <div>
-      <input
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Your name"
-      />
-      <button onClick={handleSave}>Save</button>
-    </div>
-  )
+  return <HelpView />
 }
