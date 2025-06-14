@@ -1,7 +1,6 @@
-# starter-widget
+# Frame Help Panel
 
-This repo demonstrates a minimal setup for building an Artifact widget. It shows
-a static help panel that can be embedded inside another application.
+This repo contains a simple help panel widget that can be embedded inside another application.
 
 ## Development
 
