@@ -2,7 +2,7 @@ import { HelpCircle, BookOpen, MessageCircle, FileQuestion } from 'lucide-react'
 
 export default function HelpView() {
   return (
-    <div className="animate-fadeIn">
+    <div className="p-6 animate-fadeIn">
       <h1 className="text-2xl font-bold mb-6 flex items-center">
         <HelpCircle className="mr-2" size={24} />
         Help Center
